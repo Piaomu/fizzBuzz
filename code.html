@@ -1,0 +1,247 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <title>See the Code | fizzBuzz</title>
+  <link rel="shortcut icon" type="image/png" href="images/favicon-32x32.png"/>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/themes/prism-okaidia.min.css"
+          integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" />
+
+<link rel="stylesheet" href="/css/prism.css">
+<link rel="stylesheet" href="css/site.css">
+</head>
+
+<body>
+    <header>
+    <!--Insert Menu-->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-gray">
+        <a class="navbar-brand" href="/index.html">fizz<span class="text-magenta">Buzz</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link nav-hover-magenta" href="/index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-hover-magenta" href="/app.html">The App</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/code.html"><span class="sr-only">(current)</span>See the Code</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-hover-magenta" href="#" target="_blank">
+                        Get the Code
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-hover-cyan" href="https://kaseywahl.io/about.html" target="_blank">About Kasey</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    </header>
+    <div class="jumbotron jumbotron-fluid header">
+  <div class="container hero">
+    <div>
+        <h1 class="text-light text-center text-shadow">fizz<span class="text-magenta">Buzz</span></h1>
+        <h3 class="text-light text-center text-shadow">JavaScript coding challenge.</h3>
+    </div>
+  </div>
+</div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-8 offset-md-2">
+                <div class="accordion" id="scriptMarkUp">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <div class=" col-12 col-lg-4 offset-lg-4 text-center">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <span class="explainer-dropdowns">Step 1: Set the range of values from 1 to 100</span> 
+                                    </button>
+                                </h2>
+                            </div>
+                        </div>
+
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#scriptMarkUp">
+                            <div class="card-body">
+    <pre class="line-numbers" data-start="1">
+<code class="language-javascript">//Prints numbers to the page
+function printNumbers() {
+  let numbers = getRange();
+  displayData(numbers);
+}
+
+//Gets the range of numbers
+function getRange() {
+  let numberArray = [];
+
+  //sets parameters for the table from 1 to 100
+  for (let i = 1; i <= 100; i++){
+    numberArray.push(i);
+  }
+  return numberArray;
+}
+
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <div class=" col-12 col-lg-4 offset-lg-4 text-center">
+
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        <span class="explainer-dropdowns">Step 2: Connect JavaScript to table in the HTML Template</span> 
+                                    </button>
+                                </h2>
+                            </div>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#scriptMarkUp">
+                            <div class="card-body">
+                                <pre class="line-numbers" data-start="18"><code class="language-js">//Connect JavaScript to the table in the HTML page
+function displayData(numbers){
+  let numOne = parseInt(document.getElementById("numOne").value);
+  let numTwo = parseInt(document.getElementById("numTwo").value);
+  const rowTemplate = document.getElementById("Data-Template");
+  const resultsBody = document.getElementById("resultsBody");
+  let colCount = rowTemplate.content.cloneNode(true).querySelectorAll("td").length;
+
+  //clear the table
+  resultsBody.innerHTML = "";
+
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingThree">
+                            <div class=" col-12 col-lg-4 offset-lg-4 text-center">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        <span class="explainer-dropdowns">Step 3: Loop over the elements in the 'numbers' array</span>
+                                    </button>
+                                </h2>
+                            </div>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#scriptMarkUp">
+                            <div class="card-body">
+                                <pre class="line-numbers" data-start="29"><code class="language-js">  //loop over every element in the numbers array (rows)
+  //Get the value and write it to the page
+  for (let i = 0; i < numbers.length; i+=colCount) {
+    let dataRow = rowTemplate.content.cloneNode(true);
+
+    //Return an array of columns from the HTML template
+    let cols = dataRow.querySelectorAll("td");
+
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingFour">
+                            <div class=" col-12 col-lg-4 offset-lg-4 text-center">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        <span class="explainer-dropdowns">Step 4: Loop over the columns and check fizzBuzz conditions</span>
+                                    </button>
+                                </h2>
+                            </div>
+                        </div>
+                        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#scriptMarkUp">
+                            <div class="card-body">
+                                <pre class="line-numbers" data-start="37"><code class="language-js">    //Loop over the columns and create fizzBuzz conditions
+    for (let colIndex = 0; colIndex < cols.length; colIndex++) {
+      let value = numbers[i + colIndex];
+      if(typeof value === "undefined") {
+        value = "";
+        //if value is divisible by both user's numbers, add "fizzBuzz" class and display string "fizzBuzz"
+      } else if( ( (value % numOne) == 0) && (value % numTwo) == 0){
+        cols[colIndex].classList.add("fizzBuzz");
+        value = "fizzBuzz";
+
+        //if value is divisible by only user's numOne, add "fizz" class and display string "fizz"
+      } else if((value % numOne) == 0) {
+        cols[colIndex].classList.add("fizz");
+        value = "fizz";
+
+        //if value is divisible by only user's numTwo, add "Buzz" class and display string "Buzz"
+      } else if( (value % numTwo) == 0) {
+        cols[colIndex].classList.add("buzz");
+        value = "Buzz";
+      }
+      //Note: td's use .textContent to add the content to the td field.
+      cols[colIndex].textContent = value;
+    }
+</code></pre>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingFive">
+                            <div class=" col-12 col-lg-4 offset-lg-4 text-center">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-cf btn-block collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                        <span class="explainer-dropdowns">Step 5: Append the data to the page</span>
+                                    </button>
+                                </h2>
+                            </div>
+                        </div>
+                        <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#scriptMarkUp">
+                            <div class="card-body">
+                                <pre class="line-numbers" data-start="60"><code class="language-js">// Add the row to the page
+    resultsBody.appendChild(dataRow);
+  }
+}                       </code>
+</pre>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <hr />
+    <footer class="footer bg-gray">
+      <div class="container bg-gray">
+          <div class="text-light text-center bg-gray">
+            <h4>Get in touch with <a class="text-cyan portfolio-link" href="https://kaseywahl.io/contact.html">Kasey</a>!</h4>
+    <p class="text-light">Copyright ©<script>
+        var CurrentYear = new Date().getFullYear()
+        document.write(CurrentYear)
+      </script> Kasey Wahl</p>
+  </div>
+      </div>
+    </footer>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/prism.min.js"
+            integrity="sha512-WkVkkoB31AoI9DAk6SEEEyacH9etQXKUov4JRRuM1Y681VsTq7jYgrRw06cbP6Io7kPsKx+tLFpH/HXZSZ2YEQ==" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/plugins/line-numbers/prism-line-numbers.min.js"
+            integrity="sha512-1oLZvExT5RaW4q2GgvRPf+XzVVGmsKirfZBRN7aifdOpvZ1L9idEncfMFlfHiQNGBA+Sev+alscSAT/xQ0rwXA==" crossorigin="anonymous">
+    </script>
+
+</body>
+
+</html>

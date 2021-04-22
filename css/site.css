@@ -10,6 +10,11 @@ body {
   background-image: url(/img/bg-dots.png);
 }
 
+hr {
+  border: 3px solid #222222;
+  border-radius: 2px;
+}
+
 .header {
   background-color: #542cb7;
 }
